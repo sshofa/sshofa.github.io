@@ -12,6 +12,12 @@ h1{
   padding: 5px;
 }
 
+/*Textbox in a red square */
+.TextBox{
+  padding: 5px;
+  bordeR: 5px solid red;
+}
+
 /* Style the search box */
 #menu {
   width: 100%;
