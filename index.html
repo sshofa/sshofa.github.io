@@ -6,13 +6,18 @@
 </head>
 <body>
   <h1>Fira Shofa<img src="Fira.PNG" height="100px" width="75px"></h1>
-  <input type="text" id="menu" onkeyup="myFunction()" placeholder="Menu" title="Type in a page">
-  <ul id="myMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="Senior Thesis Paper.pdf" target="_blank">Undergraduate Senior Project</a></li>
-    <li><a href="Resume.pdf" target="_blank">Resume</a></li>
-  </ul>
+  <div onclick="ToggleMenu()" class="container">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <input type="text" id="menu" onkeyup="MenuSearch()" placeholder="Menu" title="Type in a page">
+    <ul id="myMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Senior Thesis Paper.pdf" target="_blank">Undergraduate Senior Project</a></li>
+      <li><a href="Resume.pdf" target="_blank">Resume</a></li>
+    </ul>
+<div class="main">
   <div class="TextBox">
   <p>
     Welcome to my website. All things on this website coded in:
@@ -21,6 +26,13 @@
       <li>CSS</li>
       <li>JavaScript</li>
     </ul>
+    </br>
+      My name is Syefira Shofa and I am a data enthusiast. I hold a Bachelors of Arts in Applied Mathematics from the University of San Diego. <br>
+    </br>
+      I am currently an Analyst who enjoys learning how to tackle data, applying my mathematical skills to the business world and the art of analyzation. I’ve always been a numbers and logics person. I’ve found a lot of my undergraduate studies solving real world problems through mathematics very useful for the workforce where I’m able to see the relationship and connections within the problem in order to find the best possible solution at a fast rate. I’ve become capable in many data analytics tools such as Tableau, SQL and R. I’m also proficient in mathematical modeling and statistical analysis. I love tackling on new problems and building new efficiencies. In a non-technical sense, the skill I had the pleasure of really developing is my ability to work with colleagues of various levels of analytical intellect and formulating my trains of thoughts to better be on the same wavelength as theirs resulting in an easy to understand optimization strategy.<br>
+    </br>
+      In my spare time, I love learning about new ways to analyze. I take on new problems, algorithms and programs every chance I get. Currently, I’m in the process of exploring the extent of R’s capabilities by studying past Kaggle solutions. These Kaggle solutions also help me understand the thought processes and step by step procedures by the people who tackle on Kaggle problems. I’ve also taken a step into improving my computer science skills by delving into “Intro To Algorithms” by CLRS in order to understand the concepts behind algorithms and how to generate my own given any situation. These exercises also help me understand the real world as well because I’ve always been fascinated by how much of computer science logic is modeled by the real world.
+    </p>
     I will soon be adding more content from:
     <ul>
       <li>R</li>
@@ -30,13 +42,14 @@
     I will also add some cool math puzzles and possibly utilize some Matlab. Stay tuned :)
   </p>
 </div>
-  <p>
+  <p class=CENTER>
     <a href="https://www.linkedin.com/in/syefira-shofa-09178366/">
-      <img src="linkedin.png" height="100px" width="150px" class="CENTER">
+      <img src="linkedin.png" height="100px" width="150px">
     </a>
     <a href="https://www.instagram.com/firaaa110/">
-      <img src="instagram.png" height="100px" width="100px" class="CENTER">
+      <img src="instagram.png" height="100px" width="100px">
     </a>
   </p>
+</div>
 </body>
 </html>

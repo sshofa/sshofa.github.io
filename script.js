@@ -1,4 +1,4 @@
-function myFunction() {
+function MenuSearch() {
     // Declare variables
     var input, filter, ul, li, a, i;
     input = document.getElementById("menu");
@@ -14,5 +14,13 @@ function myFunction() {
         } else {
             li[i].style.display = "none";
         }
+    }
+}
+function ToggleMenu() {
+    var x = document.getElementById("myMenu");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
 }
