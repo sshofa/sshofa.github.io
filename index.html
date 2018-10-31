@@ -5,22 +5,22 @@
   <script type='text/javascript' src='script.js'></script>
 </head>
 <body>
+  <span onclick="openNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </span>
   <h1>Fira Shofa<img src="Fira.PNG" height="100px" width="75px"></h1>
-  <div onclick="ToggleMenu()" class="container">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="Senior Thesis Paper.pdf" target="_blank">Undergraduate Senior Project</a>
+    <a href="Resume.pdf" target="_blank">Resume</a>
   </div>
-  <input type="text" id="menu" onkeyup="MenuSearch()" placeholder="Menu" title="Type in a page">
-    <ul id="myMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Senior Thesis Paper.pdf" target="_blank">Undergraduate Senior Project</a></li>
-      <li><a href="Resume.pdf" target="_blank">Resume</a></li>
-    </ul>
-<div class="main">
-  <div class="TextBox">
-  <p>
-    Welcome to my website. All things on this website coded in:
+  <div id = "main" class="TextBox">
+    <div>
+      <p>
+        Welcome to my website. All things on this website coded in:
     <ul>
       <li>HTML</li>
       <li>CSS</li>
@@ -50,6 +50,7 @@
       <img src="instagram.png" height="100px" width="100px">
     </a>
   </p>
+</div>
 </div>
 </body>
 </html>
