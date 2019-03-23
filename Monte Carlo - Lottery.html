@@ -13131,7 +13131,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -13145,28 +13145,56 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This will be our first function as well as our main. In this scenario, we've got 333 students. You automatically get 1 ticket as long as you're a student. Obviously most people won't buy extra tickets (if you were like me and you didn't have a car anyways. On the lucky chance that I'd gotten picked, I would honestly have just sold it). About 16 people decided to buy extra tickets just for the heck of it. And, we finally have 5 rich kids who bought about 100 tickets which means they spent about $1000 dollars on just parking tickets (I heard some people say a couple of people really did spend this much, but I graduated a long time ago). There are 100 tickets so let's run this 100 times.</p>
+<p>This will be our class. In this scenario, we've got 300 students. You automatically get 1 ticket as long as you're a student. Obviously most people won't buy extra tickets (if you were like me and you didn't have a car anyways. On the lucky chance that I'd gotten picked, I would honestly have just sold it). Let's assume that some people buy an extra ticket or two but not a whole lot more. And then, there's the rich kid who decides to spend $1000 on this and get 50 times more than your average student. (I heard some people say a couple of people really did spend this much, but I graduated a long time ago). For simplicities sake, let's just pretend like 1 student has 50 times more than all the rest. Also embedded in the class is the masterpiece of probabilities: a randomizer. And, we'll also add in the class that if it's the rich kids number, we'll return a 1 (this isn't boolean, just a count of how many time rich kid is called).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pickStudent</span><span class="p">(</span><span class="n">numStudent</span><span class="p">,</span> <span class="n">numPicks</span><span class="p">):</span>
-    <span class="c1">#apply weights to certain students. i.e. imagine that students 0-10 bought 7 tickets</span>
-    <span class="n">studentNumber</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="mi">333</span><span class="p">))</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">lottery</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">student</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">299</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">student</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">student</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">300</span><span class="p">]</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pick</span><span class="o">=</span><span class="kc">None</span>
+    <span class="k">def</span> <span class="nf">pickStudent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pick</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">student</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">winner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numStudent</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">numStudent</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pick</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's test our (or in this case rich kid's) luck and see the probability of getting picked.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">testMyLuck</span><span class="p">(</span><span class="n">numStudent</span><span class="p">,</span> <span class="n">numPicks</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
     <span class="n">numHits</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numPicks</span><span class="p">):</span>
-        <span class="n">chosenStudent</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">studentNumber</span><span class="p">)</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chosenStudent</span><span class="p">)</span>
-        <span class="n">studentNumber</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">chosenStudent</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">chosenStudent</span> <span class="o">==</span> <span class="n">numStudent</span><span class="p">:</span>
-            <span class="n">numHits</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">probability</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">numHits</span> <span class="o">/</span> <span class="n">numPicks</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">game</span><span class="o">.</span><span class="n">pickStudent</span><span class="p">()</span>
+        <span class="n">numHits</span> <span class="o">+=</span> <span class="n">game</span><span class="o">.</span><span class="n">winner</span><span class="p">(</span><span class="n">numStudent</span><span class="p">)</span>
+    <span class="n">probability</span> <span class="o">=</span> <span class="p">(</span><span class="n">numHits</span> <span class="o">/</span> <span class="n">numPicks</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
     <span class="k">return</span> <span class="n">probability</span>
 </pre></div>
 
@@ -13178,25 +13206,57 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This one is tu simulate is dozens of times in order to average out all of the probabilities.</p>
+<p>But, one simulation is just going to give you the sample probability. In order to get the true probability of the population, you'd want to run multiple simulations (law of large numbers).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="n">numStudent</span><span class="p">,</span> <span class="n">numPicks</span><span class="p">,</span> <span class="n">numTrials</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numTrials</span><span class="p">):</span>
-        <span class="n">probability</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">probability</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pickStudent</span><span class="p">(</span><span class="n">numStudent</span><span class="p">,</span> <span class="n">numPicks</span><span class="p">))</span>
-        <span class="n">true_probability</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The probability that I will get picked is &#39;</span><span class="p">,</span> <span class="n">true_probability</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game</span> <span class="o">=</span> <span class="n">lottery</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">simulation</span> <span class="p">(</span><span class="n">numSim</span><span class="p">):</span>
+    <span class="n">probabilityArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numSim</span><span class="p">):</span>
+        <span class="n">probabilityArray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">testMyLuck</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="n">game</span><span class="p">))</span>
+    <span class="n">avgProbability</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">probabilityArray</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">probabilityArray</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;The probablity that I will get chosen is&#39;</span><span class="p">,</span> <span class="n">avgProbability</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">simulations</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Number of simulations =&#39;</span><span class="p">,</span> <span class="n">simulations</span><span class="p">)</span>
+    <span class="n">simulation</span><span class="p">(</span><span class="n">simulations</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of simulations = 10
+The probablity that I will get chosen is 11.2 %
+Number of simulations = 100
+The probablity that I will get chosen is 14.74 %
+Number of simulations = 1000
+The probablity that I will get chosen is 14.454 %
+Number of simulations = 10000
+The probablity that I will get chosen is 14.454 %
+Number of simulations = 100000
+The probablity that I will get chosen is 14.36548 %
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13204,25 +13264,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's spit out scenarios of 5 different levels of iterations to see if the probability converges.</p>
+<p>The true probability of this or 50/349 is approximately 14.326% and as you can see, the series does diverge to the true probability the more iterations we have.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">simulations</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">,</span> <span class="mi">10000000</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Simulation iterations: &quot;</span><span class="p">,</span> <span class="n">simulations</span><span class="p">)</span>
-    <span class="n">simulate</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">simulations</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
