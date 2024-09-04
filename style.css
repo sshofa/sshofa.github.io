@@ -1,139 +1,88 @@
-/*Style h1 */
-h1{
-  text-align: center;
-  font-weight: bold;
+/* Header styling */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* Style the Menu icon */
-.bar {
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
+/* Profile picture styling */
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
 }
 
-/*pointer when they hover over the bars*/
-.container {
-    display: inline-block;
-    cursor: pointer;
+/* Heading styling */
+h1 {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+    margin-right: 15px;
 }
 
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* CENTER IMAGES */
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-}
-
-/*Textbox in a red square */
-.TextBox{
-  padding: 5px;
-  bordeR: 5px solid red;
-}
-
-/* Style the search box */
-#menu {
-  width: 100%;
-  font-size: 18px;
-  padding: 11px;
-  border: 1px solid #ddd;
-  font-weight: bold;
-}
-
-/* Style the navigation menu */
-#myMenu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Style the navigation links */
-#myMenu li a {
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  font-weight: bold;
-  background-color: #eee;
-  display: block
-}
-
-#myMenu li a:hover {
-  background-color: red;
-  color: white;
-}
-
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
+/* Menu styling */
+.menu {
+    display: flex;
+    justify-content: center;
     background-color: red;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
+/* Menu items styling */
+.menu a {
     color: white;
-    display: block;
-    transition: 0.3s;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: black;
+.menu a:hover {
+    background-color: darkred;
+    border-radius: 3px;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    align-items: center;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
+.icon-linkedin {
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.icon-instagram {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+/* Main content styling */
+main {
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+/* Content sections */
+.content-left, .content-right {
+    width: 45%; /* Adjust width as needed */
+}
+
+/* TextBox styling */
+.TextBox {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid red;
 }

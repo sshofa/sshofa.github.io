@@ -1,36 +1,95 @@
-<html>
-  <head>
-    <link rel='stylesheet' type='text/css' href='style.css'/>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
-    <script type='text/javascript' src='script.js'></script>
-  </head>
-  <body>
-    <span onclick="openNav()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </span>
-    <h1>Fira Shofa<img src="Fira.PNG" height="100px" width="75px"></h1>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="https://github.com/sshofa" target="_blank">Github</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <title>Fira Shofa</title>
+</head>
+<body>
+  <header>
+    <img src="Fira.PNG" class="profile-pic" alt="Fira Shofa">
+    <h1>Fira Shofa</h1>
+    <nav class="menu">
       <a href="Resume.pdf" target="_blank">Resume</a>
-    </div>
-    <div id = "main" class="TextBox">
-      <div>
-        <p>Data Analyst with a Mathematics background experienced in the video game, consumer electronics and genealogy industries. Familiar with various marketing channels spanning throughout all parts of the marketing funnel. Adept at developing ETL's, mathematical and statistical modeling, and performance reporting.
-      </p>
-    </div>
-    <p class=CENTER>
+    </nav>
+    <div class="social-icons">
       <a href="https://www.linkedin.com/in/syefira-shofa-09178366/">
-        <img src="linkedin.png" height="100px" width="150px">
+        <img src="linkedin.png" class="icon-linkedin" alt="LinkedIn">
       </a>
       <a href="https://www.instagram.com/firaaa110/">
-        <img src="instagram.png" height="100px" width="100px">
+        <img src="instagram.png" class="icon-instagram" alt="Instagram">
       </a>
-    </p>
     </div>
-  </body>
+  </header>
+  <main>
+    <div class="content-left">
+      <div class="TextBox">
+        <b>About</b>
+        <p>
+          Technical Analyst with a Mathematics background experienced in the video game, consumer electronics, and genealogy industries. Familiar with various marketing channels spanning throughout all parts of the marketing funnel. Adept at developing ETLs, mathematical and statistical modeling, and performance reporting.
+        </p>
+      </div>
+      <div class="TextBox">
+        <b>School Projects</b>
+        <p>
+          <a href="joulea_report.pdf" target="_blank">Fan Power Unit Fault Detection Analysis</a>
+          <br> A practicum report for the company Joulea to analyze the fan-powered unit data and identify patterns in inefficiencies that can lead to fan unit failures.
+        </p>
+        <p>
+          <a href="Disease Prediction.pdf" target="_blank">Disease Prediction Using Machine Learning</a>
+          <br> The main objective of this project is to develop supervised machine learning models capable of effectively classifying a specific disease based on their reported symptoms.
+        </p>
+        <p>
+          <a href="Human Computer Interaction Netflix Project.pdf" target="_blank">Netflix Redesign</a>
+          <br> Project aimed at redesigning a part of the Netflix Interface.
+        </p>
+        <p>
+          <a href="Google Plus User Analysis.pdf" target="_blank">Google Plus User Analysis</a>
+          <br> The goal of this project is to identify how a user operated within the Google+ ecosystem and see how Google+ fulfilled the needs of the user.
+        </p>
+        <p>
+          <a href="PotsAndCoins.pdf" target="_blank">Pots And Coins Game Simulation</a>
+          <br> Provides an in-depth analysis of the expected length of the “Pots & Coins” game via analytical, statistical, and simulation techniques.
+        </p>
+        <p>
+          <a href="team005report.pdf" target="_blank">Real Estate Research Tool</a>
+          <br> Created an application for users to research properties efficiently. <a href="team005poster.pdf" target="_blank">Poster</a> is available for summarization of the application.
+        </p>
+        <p>
+          <a href="Course Project- Disney.pdf" target="_blank">Data Science Project - Disney</a>
+          <br> This project aims to create a hypothetical analytics solution on real problems solved by Disney’s Analytics team through knowledge gained in Georgia Institute of Technology’s Introduction to Analytics Modeling course.
+        </p>
+        <p>
+          <a href="Senior Thesis Paper.pdf" target="_blank">Undergraduate Senior Project</a>
+          <br> Topic: Collegiate Factors that Influence a Recent College Graduate's Starting Salary
+        </p>
+      </div>
+    </div>
+    <div class="content-right">
+      <div class="TextBox">
+        <b>Math Blog</b>
+        <p>
+          <a href="Budget Allocation Across Media Channels.html">Budget Allocation Across Media Channels</a>
+          <br> The main purpose of this is to allocate budget among media channels with the intent of optimizing KPI. I mainly used linear algebra to try to solve this. I realize I have to work on this still as the math is still lacking, but I wanted to share my work so far so that others will hopefully use it and optimize upon it, and hopefully share their insights with me.
+        </p>
+      </div>
+      <div class="TextBox">
+        <b>Coding Blog</b>
+        <p>
+          <a href="greedy.html">Greedy Clothes</a>
+          <br> My version of solving the "knapsack problem" and implementing the "greedy algorithm." I tried to make this more fun by putting in what I would maybe want to buy. Value is how much I really want the item and Price is how much it costs.
+        </p>
+        <p>
+          <a href="Lottery.html">Lottery Pick For Student-Parking</a>
+          <br> Imagine you decided to buy more tickets than your classmates because you want a parking spot for the next school year. What's the probability that you'll get picked?
+        </p>
+        <p>
+          <a href="Ad Simulation.html">Ad Simulation</a>
+          <br> Creates a simulation: there are 3 ads of different lengths (10s, 15s, 20s) and each new audience that comes randomly selects an ad to watch. The catch is each ad can only be watched by one person at a time so the next person has to wait in line.
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
 </html>
