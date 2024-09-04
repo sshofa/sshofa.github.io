@@ -16,7 +16,7 @@ header {
 
 /* Profile picture styling */
 .profile-pic {
-    width: 10vw; /* Use viewport width for responsiveness */
+    width: 10vw; /* Responsive size */
     height: 10vw; /* Maintain aspect ratio */
     max-width: 100px; /* Maximum size */
     max-height: 100px; /* Maximum size */
@@ -63,19 +63,14 @@ h1 {
 .social-icons {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Allows icons to wrap on smaller screens */
 }
 
-.icon-linkedin {
-    width: 20vw; /* Use viewport width for responsiveness */
-    height: auto;
-    max-width: 100px; /* Maximum size */
-    margin-left: 0.5rem;
-}
-
-.icon-instagram {
-    width: 10vw; /* Use viewport width for responsiveness */
-    height: auto;
-    max-width: 50px; /* Maximum size */
+.icon-linkedin, .icon-instagram {
+    width: 8vw; /* Responsive size */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 80px; /* Maximum size */
+    max-height: 80px; /* Maximum size */
     margin-left: 0.5rem;
 }
 
@@ -121,6 +116,10 @@ main {
         width: 25vw;
         height: 25vw;
     }
+
+    .icon-linkedin, .icon-instagram {
+        width: 10vw;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -134,12 +133,7 @@ main {
         height: 30vw;
     }
 
-    h1 {
-        font-size: 5vw;
-    }
-
     .icon-linkedin, .icon-instagram {
         width: 15vw;
-        height: auto;
     }
 }
