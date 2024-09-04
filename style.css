@@ -1,26 +1,35 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Header styling */
 header {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 1rem;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 /* Profile picture styling */
 .profile-pic {
-    width: 50px;
-    height: 50px;
+    width: 10vw; /* Use viewport width for responsiveness */
+    height: 10vw; /* Maintain aspect ratio */
+    max-width: 100px; /* Maximum size */
+    max-height: 100px; /* Maximum size */
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 
 /* Heading styling */
 h1 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 4vw; /* Responsive font size */
     margin: 0;
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 
 /* Menu styling */
@@ -28,7 +37,7 @@ h1 {
     display: flex;
     justify-content: center;
     background-color: red;
-    padding: 5px;
+    padding: 0.5rem;
     border-radius: 5px;
     width: 100%;
     max-width: 800px;
@@ -39,9 +48,9 @@ h1 {
 .menu a {
     color: white;
     text-decoration: none;
-    padding: 0 15px;
-    font-size: 16px;
-    line-height: 20px;
+    padding: 0 1rem;
+    font-size: 1.5vw; /* Responsive font size */
+    line-height: 1.5;
     font-weight: bold;
 }
 
@@ -57,32 +66,80 @@ h1 {
 }
 
 .icon-linkedin {
-    width: 100px;
-    height: 50px;
-    margin-left: 10px;
+    width: 20vw; /* Use viewport width for responsiveness */
+    height: auto;
+    max-width: 100px; /* Maximum size */
+    margin-left: 0.5rem;
 }
 
 .icon-instagram {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
+    width: 10vw; /* Use viewport width for responsiveness */
+    height: auto;
+    max-width: 50px; /* Maximum size */
+    margin-left: 0.5rem;
 }
 
 /* Main content styling */
 main {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1rem;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 /* Content sections */
 .content-left, .content-right {
-    width: 45%; /* Adjust width as needed */
+    width: 100%; /* Full width on small screens */
+    max-width: 45%; /* Maximum width on larger screens */
+    margin-bottom: 1rem; /* Spacing between sections */
 }
 
 /* TextBox styling */
 .TextBox {
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 1rem;
+    padding: 1rem;
     border: 2px solid red;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Adjust layout for tablets */
+    .content-left, .content-right {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        font-size: 1.2rem;
+    }
+
+    .profile-pic {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust layout for mobile phones */
+    .menu {
+        font-size: 1rem;
+    }
+
+    .profile-pic {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    .icon-linkedin, .icon-instagram {
+        width: 15vw;
+        height: auto;
+    }
 }
