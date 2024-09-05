@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Center all <b> elements and add space above and below */
+b {
+    display: block;
+    text-align: center;
+    margin: 20px 0; /* Adds 20px space above and below */
+}
+
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
