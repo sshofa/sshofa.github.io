@@ -1,3 +1,11 @@
+/* Define theme colors for consistency */
+:root {
+    --primary-red: #C62828;      /* professional red */
+    --primary-red-dark: #B71C1C; /* darker hover */
+    --accent-gray: #6B7280;
+    --bg: #ffffff;
+}
+
 /* Reset some default styles */
 * {
     margin: 0;
@@ -21,12 +29,13 @@ body {
 /* Header styling */
 header {
     display: flex;
-    justify-content: space-between; /* Space between left (name/picture), center (Resume), and right (social icons) */
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     flex-wrap: nowrap;
+    position: relative; /* <-- needed for absolute centering of .menu */
 }
 
 /* Profile picture and name container */
@@ -59,9 +68,13 @@ h1 {
 
 /* Menu styling */
 .menu {
-    background-color: red;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:var(--primary-red);
     padding: 5px 10px;
     border-radius: 5px;
+    z-index: 2;
 }
 
 .menu a {
@@ -73,26 +86,27 @@ h1 {
 }
 
 .menu a:hover {
-    background-color: darkred;
+    background-color: var(--primary-red-dark);
     border-radius: 3px;
 }
 
-//* Social icons styling */
+/* Social icons styling */
 .social-icons {
     display: flex;
     align-items: center;
+    gap: 10px;          /* space between icons */
+    margin-left: auto;  /* push icons to the right side of the header */
 }
 
-.icon-linkedin {
-    width: 100px;  /* Width of LinkedIn icon */
-    height: 50px;  /* Height of LinkedIn icon */
-    margin-left: 10px;
-}
-
+/* Make sure images are consistent size and don't distort */
+.social-icons img,
+.icon-linkedin,
 .icon-instagram {
-    width: 50px; /* Instagram icon size remains the same */
-    height: 50px;
-    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    margin-left: 0;
 }
 
 /* Main content styling */
@@ -110,36 +124,43 @@ main {
     margin-bottom: 10px; /* Space between sections */
 }
 
+.TextBox.about-section {
+    background-color: var(--primary-red);
+    color: #ffffff;
+}
+
 /* About section styling */
 .about-section {
-    background-color: red !important; /* Ensure full red background */
-    color: white !important; /* White text color */
-    padding: 20px; /* Adjust padding if needed */
-    border: 2px solid red; /* Border to match the red background */
-    border-radius: 10px; /* Match border radius with TextBox styling */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    background-color: var(--primary-red); /* professional red */
+    color: #ffffff;
+    padding: 20px;
+    border: 2px solid var(--primary-red-dark);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
 }
 
 /* TextBox styling */
 .TextBox {
     padding: 20px;
-    border: 2px solid red;
-    border-radius: 10px; /* More rounded corners */
-    background-color: #fff; /* White background for content boxes */
+    border: 2px solid var(--accent-gray);
+    border-radius: 10px;
+    background-color: #fff;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for a subtle 3D effect */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
 
 /* Responsive design */
 @media (max-width: 768px) {
     .menu {
-        flex-direction: column;
-        align-items: center;
+    position: static;
+    transform: none;
+    margin: 0 auto;
     }
+    
+    .social-icons img { width: 28px; height: 28px; }
 
     .content-left, .content-right {
         width: 100%;
